@@ -7,8 +7,12 @@ from youtube_transcript_api.formatters import JSONFormatter
 
 app = Flask(__name__)
 
-@app.route('/postag')
+@app.route('/')
 def index():
+    return 'ok'
+
+@app.route('/postag')
+def postag():
     # Get the 'input_string' query parameter from the request
     input_string = request.args.get('input_string', '')
 
