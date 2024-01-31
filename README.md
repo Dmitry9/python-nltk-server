@@ -20,7 +20,7 @@ docker tag dmitry9/flask-nltk-service:latest dmitry9/flask-nltk-service:latest
 docker push dmitry9/flask-nltk-service:latest
 ```
 
-4. trigger url redeploy hook (see notes) for render.com
+4. trigger url redeploy hook (see local notes or webui settings) for render.com
 
 Now, your Docker Hub repository should be updated with the latest changes, and the `latest` tag should point to the new image.
 
