@@ -2,9 +2,12 @@ from flask import Flask, jsonify, request
 import subprocess
 import json
 
+from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.formatters import JSONFormatter
+
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/postag')
 def index():
     # Get the 'input_string' query parameter from the request
     input_string = request.args.get('input_string', '')
@@ -21,6 +24,13 @@ def index():
 
     # Return the JSON response
     return jsonify(data)
+
+@app.route('/transcript')
+def transcript():
+    videoid = request.args.get('videoid', '')
+    formatter = JSONFormatter()
+    transcript = YouTubeTranscriptApi.get_transcript(videoid)
+    return formatter.format_transcript(transcript)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
