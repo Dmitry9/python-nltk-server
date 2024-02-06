@@ -33,7 +33,7 @@ def postag():
 def transcript():
     videoid = request.args.get('videoid', '')
     formatter = JSONFormatter()
-    transcript = YouTubeTranscriptApi.get_transcript(videoid, proxies={"https": "https://brd-customer-hl_9f5a0152-zone-data_center:i23vcr837xxg@brd.superproxy.io:22225"})
+    transcript = YouTubeTranscriptApi.get_transcript(videoid, proxies={"https": "http://brd-customer-hl_9f5a0152-zone-data_center:i23vcr837xxg@brd.superproxy.io:22225"})
     return formatter.format_transcript(transcript)
 
 if __name__ == '__main__':
