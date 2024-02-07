@@ -1,6 +1,6 @@
 To update the `latest` tag of your Docker image on Docker Hub, you can follow these general steps:
 
-1. Build the new Docker image with the updated Dockerfile.
+1. Build the new Docker image with the updated Dockerfile.![trobleshoot docker](wsl-integration.png)
 
 ```bash
 docker build -t dmitry9/flask-nltk-service:latest .
